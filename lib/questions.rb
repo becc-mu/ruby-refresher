@@ -55,8 +55,8 @@ end
 # 'banana' becomes 'ban'. If the string is an odd number of letters
 # round up - so 'apple' becomes 'app'
 def get_first_half_of_string(string)
-  string_lenth = (string.length / 2.0).ceil
-  string[0, string_lenth]
+  string_length = (string.length / 2.0).ceil
+  string[0, string_length]
 end
 
 # turn a positive integer into a negative integer. A negative integer
@@ -105,6 +105,7 @@ end
 
 # convert a symbol into a string
 def turn_symbol_into_string(symbol)
+  symbol.to_s
 end
 
 # get the average from an array, rounded to the nearest integer
