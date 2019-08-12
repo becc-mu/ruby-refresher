@@ -7,7 +7,6 @@ end
 
 # keep only the elements that start with a vowel
 def select_elements_starting_with_vowel(array)
-  vowels = %[ a e i o u ]
   array.select { |ltr| ltr =~ /\A[aeiou]/i }
 end
 
@@ -43,22 +42,27 @@ end
 
 # add an element to the beginning of an array
 def add_element_to_beginning_of_array(array, element)
+  array.unshift(element)
 end
 
 # sort an array of words by their last letter, e.g.
 # ['sky', 'puma', 'maker'] becomes ['puma', 'maker', 'sky']
 def array_sort_by_last_letter_of_word(array)
+  array.sort_by { |e| e[-1] }
 end
 
 # cut strings in half, and return the first half, e.g.
 # 'banana' becomes 'ban'. If the string is an odd number of letters
 # round up - so 'apple' becomes 'app'
 def get_first_half_of_string(string)
+  string_lenth = (string.length / 2.0).ceil
+  string[0, string_lenth]
 end
 
 # turn a positive integer into a negative integer. A negative integer
 # stays negative
 def make_numbers_negative(number)
+  -number.abs
 end
 
 # turn an array of numbers into two arrays of numbers, one an array of
@@ -66,6 +70,8 @@ end
 # even numbers come first
 # so [1, 2, 3, 4, 5, 6] becomes [[2, 4, 6], [1, 3, 5]]
 def separate_array_into_even_and_odd_numbers(array)
+  arr_odd = array.length % 2
+  array.partition(&:even?)
 end
 
 # count the numbers of elements in an element which are palindromes
